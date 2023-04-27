@@ -10,6 +10,10 @@ from .forms import CreateNewList
 # function renders html back with object passed into in list.html as variable "ls".
 # get a ToDoList object, I guess that's a list
 def index(response, id):
+    print('response.user', response.user)
+    print('response.user.is_authenticated', response.user.is_authenticated)
+    print('response.method', response.method)
+
     ls = ToDoList.objects.get(id=id)  # get a list
 
     if response.method == "POST":
@@ -37,10 +41,16 @@ def index(response, id):
 
 
 def home(response):
+    print('response.user', response.user)
+    print('response.user.is_authenticated', response.user.is_authenticated)
+    print('response.method', response.method)
+
     return render(response, "main/home.html", {})
 
 
 def create(response):
+    print('response.user', response.user)
+    print('response.user.is_authenticated', response.user.is_authenticated)
     print('response.method', response.method)
     if response.method == "POST":
         form = CreateNewList(response.POST)
