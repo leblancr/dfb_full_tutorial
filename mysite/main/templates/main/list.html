@@ -1,11 +1,11 @@
 {% extends 'main/base.html' %}
-{% block title %}list{% endblock %}
+{% block title %}List{% endblock %}
 
 {% block content %}
     <h1>{{ls.name}}</h1>
     <form method="post" action="#">
         {% csrf_token %}
-            {% for item in ls.item_set.all %}
+        {% for item in ls.item_set.all %}
             <div class="input-group mb-3>">
                 <div class="input-group-prepend">
                     <div class="input-group-text">
