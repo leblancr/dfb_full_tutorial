@@ -1,11 +1,11 @@
 {% extends 'main/base.html' %}
-{% block title %}List{% endblock %}
+{% block title %}Items{% endblock %}
 
 {% block content %}
-    <h1>{{ls.name}}</h1>
+    <h1>{{user_list.name}}</h1>
     <form method="post" action="#">
         {% csrf_token %}
-        {% for item in ls.item_set.all %}
+        {% for item in user_list.item_set.all %}
             <div class="input-group mb-3>">
                 <div class="input-group-prepend">
                     <div class="input-group-text">
@@ -25,6 +25,8 @@
             </div>
             <input type="text", name="new_item_input">
         </div>
-        <button class="btn btn-success", type="submit", name="save_check_button", value="save_check_button">Save checks</button>
+        {% if user_list.item_set.all %}
+            <button class="btn btn-success", type="submit", name="save_check_button", value="save_check_button">Delete checked</button>
+        {% endif %}
     </form>
 {% endblock %}

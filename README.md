@@ -45,11 +45,15 @@ python manage.py shell - python shell, to execute databse commands
 >>> to_do_list = ToDoList.objects.get(id=1)
 >>> to_do_list.item_set.all()
 >>> to_do_list.item_set.create(text="apply jobs", complete=True)
+>>> richs_list = ToDoList.objects.get(id=2)
+>>> richs_list.item_set.all()
+
 
 {% csrf_token %} - required in all forms
 form.as_p - paragraph? there are more _ options
 
-python manage.py createsuperuser - for /admin account richdfbQ223@
+python manage.py createsuperuser - for /admin account richdjaQ223@
+python manage.py changepassword <user_name>- if they forget
 
 info:
 /home/rich/.pyenv/versions/3.10.10/envs/dfb_full_tutorial/lib/python3.10/site-packages/
