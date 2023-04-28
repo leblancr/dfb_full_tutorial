@@ -2,12 +2,12 @@
 {% block title %}Create List{% endblock %}
 
 {% block content %}
-<h3>Create New Item List</h3>
+<h3>Enter New List Name</h3>
 <form method="post" action="/create/" class="form-group">
     {% csrf_token %}
     <div class="input-group mb-3">
         <div class="input-group-prepend">
-            <button type="submit", name="save" class="btn btn-success">Create new</button>
+            <button type="submit", name="save" class="btn btn-success">Create list</button>
             {{form.name}}
         </div>
     </div>

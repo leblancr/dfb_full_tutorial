@@ -30,6 +30,8 @@
             padding:0px 10px;
         }
 
+        h1 {text-align: center;}
+
     </style>
 
     <meta charset="UTF-8">
@@ -41,14 +43,18 @@
     <a href="/home">Home</a>
     <a href="/register">Register</a>
     <a href="/create">Create</a>
-    <a href="/1">View</a>
+    <a href="/lists">Lists</a>
     <a href="/login">Login</a>
     <a href="/logout">Logout</a>
 </div>
 <div id="content", name="content", class="main">
     <div class="row justify-content-center">
         <div>
-            <h1 class="mt-2">List Manager</h1>
+            {% if user.id %}
+                <h1 class="mt-2">{{user|capfirst}}'s List Manager</h1>
+            {% else %}
+                <h1 class="mt-2">List Manager</h1>
+            {% endif %}
             <hr class="mt-0 mb-4">
             {% if user.is_authenticated %}
                 {% block content %}
